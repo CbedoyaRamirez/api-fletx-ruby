@@ -30,3 +30,17 @@ module ApiRubyPrueba
     config.api_only = true
   end
 end
+# config/application.rb
+module ApiRubyPrueba
+  class Application < Rails::Application
+    # Configuración de CORS
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*' # Permitir todos los orígenes. Cambia '*' por un dominio específico si es necesario.
+        resource '*', # Permitir acceso a todas las rutas
+          headers: :any, # Permitir cualquier encabezado
+          methods: [:get, :post, :put, :patch, :delete, :options, :head] # Métodos HTTP permitidos
+      end
+    end
+  end
+end

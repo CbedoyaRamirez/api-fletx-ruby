@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ejecución aplicacion backend
 
-Things you may want to cover:
+Ejecute `rails s` para ejecutar el servidor en `http://localhost:3000/`
 
-* Ruby version
+## Ejecute postman u otra aplicacion para consumo de api's
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ejecute GET  `http://127.0.0.1:3000/api/v1/users`
+            response: 
+                [
+                    {
+                        "id": 2,
+                        "name": "Alberto",
+                        "lastname": "Bedoya"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Paola",
+                        "lastname": "NA"
+                    },
+                    {
+                        "id": 1,
+                        "name": "Carlos",
+                        "lastname": "prueba update"
+                    }
+                ]
+        POST  `http://127.0.0.1:3000/api/v1/users`
+            body: 
+                {
+                    "name": "nombre",
+                    "lastname": "apellido"
+                }
+        PUT  `http://127.0.0.1:3000/api/v1/users/{id}`   
+            body: 
+                {
+                    "name": "nombre",
+                    "lastname": "apellido"
+                }
